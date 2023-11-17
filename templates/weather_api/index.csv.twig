@@ -1,0 +1,4 @@
+city,country,date,celsius,fahrenheit,wind
+{% for forecast in forecasts %}
+{{ city }},{{ country_code }},{{ forecast.date | date('Y-m-d') }},{{ forecast.temperature }},{{ forecast.fahrenheit }},{{ forecast.wind }}
+{% endfor %}

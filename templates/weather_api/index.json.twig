@@ -1,0 +1,14 @@
+{
+    "city": "{{ city }}",
+    "country_code": "{{ country_code }}",
+    "forecasts": [
+        {% for forecast in forecasts %}
+        {
+            "date": "{{ forecast.date | date('Y-m-d') }}",
+            "celsius": "{{ forecast.temperature }}",
+            "fahrenheit": "{{ forecast.fahrenheit }}",
+            "wind": "{{ forecast.wind }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ]
+}
